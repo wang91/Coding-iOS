@@ -186,7 +186,6 @@
     CGFloat userSexIconViewWidth = (14);
     [_userSexIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(userSexIconViewWidth, userSexIconViewWidth));
-        
         make.left.equalTo(_userLabel.mas_right).offset(5);
         make.centerY.equalTo(_userLabel);
     }];
@@ -248,12 +247,12 @@
     NSString *imageName;
     if (_curUser.followed.boolValue) {
         if (_curUser.follow.boolValue) {
-            imageName = @"n_btn_followed_both";
+            imageName = @"n_btn_followed_both";//互相关注
         }else{
-            imageName = @"n_btn_followed_yes";
+            imageName = @"n_btn_followed_yes";//我关注
         }
     }else{
-        imageName = @"n_btn_followed_not";
+        imageName = @"n_btn_followed_not";//只关注我，没关注
     }
     [_followBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }

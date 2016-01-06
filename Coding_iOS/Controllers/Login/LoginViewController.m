@@ -293,10 +293,6 @@
     _loginBtn = [UIButton buttonWithStyle:StrapSuccessStyle andTitle:@"登录" andFrame:CGRectMake(kLoginPaddingLeftWidth, 20, kScreen_Width-kLoginPaddingLeftWidth*2, 45) target:self action:@selector(sendLogin)];
     [footerV addSubview:_loginBtn];
     
-    
-    
-    
-    
     RAC(self, loginBtn.enabled) = [RACSignal combineLatest:@[
                                                              RACObserve(self, myLogin.email),
                                                              RACObserve(self, myLogin.password),

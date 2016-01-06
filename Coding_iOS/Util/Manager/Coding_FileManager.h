@@ -55,14 +55,18 @@
 @property (strong, nonatomic) NSURLSessionDownloadTask *task;
 @property (strong, nonatomic) NSProgress *progress;
 @property (strong, nonatomic) NSString *diskFileName;
+
 + (Coding_DownloadTask *)cDownloadTaskWithTask:(NSURLSessionDownloadTask *)task progress:(NSProgress *)progress fileName:(NSString *)fileName;
 - (void)cancel;
+
 @end
 
 @interface Coding_UploadTask : NSObject
 @property (strong, nonatomic) NSURLSessionUploadTask *task;
 @property (strong, nonatomic) NSProgress *progress;
 @property (strong, nonatomic) NSString *fileName;
+
 + (Coding_UploadTask *)cUploadTaskWithTask:(NSURLSessionUploadTask *)task progress:(NSProgress *)progress fileName:(NSString *)fileName;
 - (void)cancel;
+
 @end

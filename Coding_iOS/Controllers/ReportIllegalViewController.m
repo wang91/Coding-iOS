@@ -84,6 +84,7 @@
 
 #pragma mark Show
 + (void)showReportWithIllegalContent:(NSString *)illegalContent andType:(IllegalContentType)type{
+    
     ReportIllegalViewController *vc = [[ReportIllegalViewController alloc] init];
     vc.illegalContent = illegalContent;
     vc.type = type;

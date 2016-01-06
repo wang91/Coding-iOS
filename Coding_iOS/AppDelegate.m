@@ -43,6 +43,7 @@
 #pragma mark XGPush
 - (void)registerPush{
     float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+    //注册push服务
     if(sysVer < 8){
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     }else{
@@ -88,14 +89,14 @@
     //UIWebView 的 User-Agent
     [self registerUserAgent];
 
-    if ([Login isLogin]) {
+    if ([Login isLogin]) {//已经登录
         [self setupTabViewController];
     }else{
         [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         [self setupIntroductionViewController];
     }
     [self.window makeKeyAndVisible];
-    [FunctionIntroManager showIntroPage];
+    [FunctionIntroManager showIntroPage];//介绍界面
 
     EaseStartView *startView = [EaseStartView startView];
     @weakify(self);
@@ -205,6 +206,7 @@
 #pragma mark - XGPush Message
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
+    //注册设备信息
     NSString * deviceTokenStr = [XGPush registerDevice:deviceToken];
     DebugLog(@"deviceTokenStr : %@", deviceTokenStr);
 }

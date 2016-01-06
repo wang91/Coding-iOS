@@ -233,9 +233,11 @@
     [self reset_dataList];
 }
 - (void)deleteMessage:(PrivateMessage *)msg{
+    
     [self.list removeObject:msg];
     [self.nextMessages removeObject:msg];
     [self reset_dataList];
+    
 }
 @end
 
